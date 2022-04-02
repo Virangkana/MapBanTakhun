@@ -34,18 +34,12 @@
   });
 
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
-  map.createPane('pane__0');
-        map.getPane('pane__0').style.zIndex = 401;
-        var layer__0 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
-            pane: 'pane__0',
-             opacity: 1.0,
-            attribution: '',
-            minZoom: 2,
-            maxZoom: 28,
-            minNativeZoom: 0,
-            maxNativeZoom: 19
-        });
-      
+ L.tileLayer(
+   'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+     attribution: '&copy; <a href="https://osm.org/copyright">\
+      OpenStreetMap</a> contributors, &copy;\
+        <a href="https://carto.com/attribution">CARTO</a>'
+ }).addTo(map);
       
 
   /* Display a point marker with pop-up text */
